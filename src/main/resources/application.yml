@@ -1,3 +1,6 @@
 spring:
   profiles:
     active: dev
+  elasticsearch:
+    rest:
+      uris: http://118.89.161.66:9200

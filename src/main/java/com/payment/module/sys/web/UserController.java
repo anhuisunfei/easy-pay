@@ -33,8 +33,23 @@ public class UserController extends AbstractController {
      */
     @PostMapping("/list")
     public Result list(SysUser user) {
+        String index="sysUser";
+
+//        GetIndexRequest getIndexRequest=new GetIndexRequest();
+//        getIndexRequest.indices(index);
+//        IndexRequest indexRequest=new IndexRequest(index,"String");
+//
+//        try{
+//restHighLevelClient.in
+//        }catch(Exception e){
+//            e.printStackTrace();
+//        }
+
+
         return sysUserService.list(user);
     }
+
+
 
     /**
      * 获取

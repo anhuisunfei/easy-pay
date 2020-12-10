@@ -2,6 +2,7 @@ package com.payment;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -24,9 +25,13 @@ public class Application extends SpringBootServletInitializer {
 
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
+
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
         logger.info("一个超级好用的个人支付平台");
+
+
     }
 
     @Override

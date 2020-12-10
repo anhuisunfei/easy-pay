@@ -9,7 +9,7 @@ import com.payment.module.sys.entity.SysUser;
  * Created by 小柒2012
  * Sun Oct 27 13:03:00 CST 2019
 */ 
-@Repository 
+@Repository
 public interface SysUserRepository extends JpaRepository<SysUser, Long> {
 }
 

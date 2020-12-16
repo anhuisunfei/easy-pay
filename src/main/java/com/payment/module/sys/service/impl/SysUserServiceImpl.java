@@ -10,7 +10,7 @@ import com.payment.common.util.ShiroUtils;
 import com.payment.module.sys.entity.SysOrg;
 import com.payment.module.sys.entity.SysUser;
 import com.payment.module.sys.entity.SysUserRole;
-import com.payment.module.sys.esrepository.EsUserRepository;
+//import com.payment.module.sys.esrepository.EsUserRepository;
 import com.payment.module.sys.mq.UserMqProducer;
 import com.payment.module.sys.repository.SysUserRepository;
 import com.payment.module.sys.service.SysUserService;
@@ -36,8 +36,8 @@ public class SysUserServiceImpl implements SysUserService {
     private AmqpTemplate amqpTemplate;
     @Autowired
     private UserMqProducer userMqProducer;
-    @Autowired
-    private EsUserRepository esUserRepository;
+//    @Autowired
+//    private EsUserRepository esUserRepository;
 
     @Override
     @Transactional(rollbackFor = Exception.class)

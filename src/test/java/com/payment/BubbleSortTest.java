@@ -18,7 +18,7 @@ public class BubbleSortTest {
     @Test
     public void testBubbleSort() {
         int arr[] = new int[]{5, 4, 2, 3, 8};
-        IArraySort sort = new SelectionSort();
+        IArraySort sort = new QuickSort();
         int newArr[] = sort.sort(arr);
 
         System.out.println(Arrays.toString(newArr));
@@ -78,6 +78,48 @@ class SelectionSort implements IArraySort {
         }
         return arr;
     }
+}
+
+/**
+ * $QuickSort 快速排序
+ */
+class QuickSort implements IArraySort {
+
+    @Override
+    public int[] sort(int[] sourceArray) {
+        int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
+        return quickSort(arr, 0, arr.length - 1);
+    }
+
+    int[] quickSort(int[] arr, int left, int right) {
+        if (left < right) {
+            int partitionIndex = partition(arr, left, right);
+            quickSort(arr, left, partitionIndex - 1);
+            quickSort(arr, partitionIndex + 1, right);
+        }
+        return arr;
+    }
+
+    int partition(int[] arr, int left, int right) {
+        int pivot = left;
+        int index = pivot + 1;
+        for (int i = index; i <= right; i++) {
+            if (arr[i] < arr[pivot]) {
+                swap(arr, i, index);
+                index++;
+            }
+        }
+        swap(arr, pivot, index - 1);
+        return index - 1;
+    }
+
+    void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+
 }
 
 
